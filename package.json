@@ -1,7 +1,6 @@
 {
   "name": "@emartech/angular-translate",
   "description": "Simple translate for angular2",
-  "version": "1.0.3",
   "keywords": [
     "angular",
     "angular2",
