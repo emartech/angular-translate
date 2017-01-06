@@ -1,6 +1,5 @@
 {
   "name": "@emartech/angular-translate",
-  "version": "1.0.0",
   "description": "Simple translate for angular2",
   "keywords": [
     "angular",
@@ -24,6 +23,11 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/emartech/angular-translate/issues"
+  },
+  "release": {
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
+    }
   },
   "homepage": "https://github.com/emartech/angular-translate#readme",
   "dependencies": {
