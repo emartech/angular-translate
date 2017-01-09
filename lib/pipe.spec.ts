@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { TranslatePipe, TranslateService } from '../lib';
+import { TranslatePipe, TranslateService } from '../';
 
 describe('pipe', () => {
 
