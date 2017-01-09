@@ -1,5 +1,6 @@
 node_modules/*
 lib/
+index.ts
 *.ngfactory.d.ts
 *.ngfactory.ts
 *.ngfactory.js
