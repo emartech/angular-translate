@@ -1,4 +1,8 @@
 node_modules/*
 lib/
+*.ngfactory.d.ts
+*.ngfactory.ts
+*.ngfactory.js
+*.ngsummary.json
 .DS_Store
 typings/

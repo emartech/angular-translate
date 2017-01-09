@@ -1,8 +1,8 @@
-export * from './service';
-export * from './pipe';
+export * from './lib/service';
+export * from './lib/pipe';
 import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
-import { TranslatePipe } from './pipe';
-import { TranslateService } from './service';
+import { TranslatePipe } from './lib/pipe';
+import { TranslateService } from './lib/service';
 
 export type Translations = {
   [name: string]: string

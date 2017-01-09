@@ -5,17 +5,17 @@
     "target": "ES5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": true,
-    "outDir": "dist/",
+    "outDir": "./dist",
     "types": ["chai", "core-js", "node", "mocha"]
   },
   "exclude": [
     "node_modules",
-    "./test/**/*.spec.ts"
+    "**/*.spec.ts"
   ],
   "filesGlob": [
-    "./lib/**/*.ts",
-    "!./node_modules/**/*.ts"
+    "index.ts",
+    "./lib/*.ts"
   ]
 }
