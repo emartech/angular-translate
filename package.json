@@ -1,6 +1,6 @@
 {
   "name": "@emartech/angular-translate",
-  "description": "Simple translate for angular2",
+  "description": "Translate module for Angular",
   "keywords": [
     "angular",
     "angular2",
