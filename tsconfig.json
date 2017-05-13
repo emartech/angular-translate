@@ -8,7 +8,7 @@
     "sourceMap": false,
     "declaration": true,
     "outDir": "./dist",
-    "types": ["chai", "core-js", "node", "mocha"]
+    "types": ["chai", "core-js", "node", "mocha", "ramda"]
   },
   "exclude": [
     "node_modules",

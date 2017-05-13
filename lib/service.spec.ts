@@ -61,7 +61,6 @@ describe('service', () => {
 
   });
 
-
   describe('#setTranslations', () => {
 
     it('should override the initial translations', () => {
@@ -70,6 +69,51 @@ describe('service', () => {
 
       expect(service.translate('key')).to.eql('key');
       expect(service.translate('otherKey')).to.eql('value');
+    });
+
+  });
+
+  describe('#translatePart', () => {
+
+    it('should return the whole translation if there is no delimiter and the 0th part is requested', () => {
+      const service = createService({ key: 'value' });
+      expect(service.translatePart('key', 0)).to.eql('value');
+    });
+
+
+    it('should return the zero-based nth part using %s as delimiter', () => {
+      const service = createService({ key: 'value0 %s value1' });
+      expect(service.translatePart('key', 1)).to.eql(' value1');
+    });
+
+
+    it('should use %d too as delimiter', () => {
+      const service = createService({ key: 'value0 %d value1' });
+      expect(service.translatePart('key', 1)).to.eql(' value1');
+    });
+
+
+    it('should handle strings where both %s and %d is used', () => {
+      const service = createService({ key: 'value0 %s value1 %d value2 %s value3' });
+      expect(service.translatePart('key', 2)).to.eql(' value2 ');
+    });
+
+
+    it('should handle nested objects', () => {
+      const service = createService({ key: { innerKey: 'value0 %s value1 %d value2 %s value3' } });
+      expect(service.translatePart('key.innerKey', 2)).to.eql(' value2 ');
+    });
+
+
+    it('should fall back to the key and the given index in brackets if there are not enough parts', () => {
+      const service = createService({ key: { innerKey: 'value0 %s value1 %d value2 %s value3' } });
+      expect(service.translatePart('key.innerKey', 4)).to.eql('key.innerKey[4]');
+    });
+
+
+    it('should fall back to the key and the given index in brackets if the key does not exist', () => {
+      const service = createService({ key: { innerKey: 'value0 %s value1 %d value2 %s value3' } });
+      expect(service.translatePart('key.innerKey2', 1)).to.eql('key.innerKey2[1]');
     });
 
   });

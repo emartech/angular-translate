@@ -31,8 +31,9 @@
   },
   "homepage": "https://github.com/emartech/angular-translate#readme",
   "dependencies": {
-    "sprintf-js": "^1.0.3",
-    "flat": "^1.6.0"
+    "flat": "^1.6.0",
+    "ramda": "^0.23.0",
+    "sprintf-js": "^1.0.3"
   },
   "peerDependencies": {
     "@angular/core": "^2.0.0"
@@ -46,6 +47,7 @@
     "@types/flat": "0.0.28",
     "@types/mocha": "2.2.35",
     "@types/node": "6.0.57",
+    "@types/ramda": "0.0.7",
     "@types/sprintf-js": "0.0.27",
     "chai": "3.5.0",
     "core-js": "2.4.1",

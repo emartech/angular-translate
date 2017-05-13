@@ -1,17 +1,18 @@
 import { Injectable, Inject } from '@angular/core';
-import { flatten } from 'flat';
+import { flatten as flattenObject } from 'flat';
 import { vsprintf } from 'sprintf-js';
+import { flatten as flattenArray, split, pipe, map } from 'ramda';
 
 @Injectable()
 export class TranslateService {
 
   constructor(@Inject('translations') private _translations: any) {
-    this._translations = flatten(_translations);
+    this._translations = flattenObject(_translations);
   }
 
 
   setTranslations(value: any) {
-    this._translations = flatten(value);
+    this._translations = flattenObject(value);
   }
 
 
@@ -27,6 +28,37 @@ export class TranslateService {
     } catch (e) {
       return translated.replace(/%s|%d/gi, '');
     }
+  }
+
+
+  translatePart(key: string, index: number) {
+    if (this.hasTranslation(key)) {
+      const translatedParts = this._getParts(this._translations[key]);
+      return translatedParts.length > index ?
+        translatedParts[index] :
+        this._getDefaultForPart(key, index);
+    } else {
+      return this._getDefaultForPart(key, index);
+    }
+  }
+
+
+  private _getParts(text: string) {
+    return pipe(
+      split('%s'),
+      map(split('%d')),
+      flattenArray
+    )(text);
+  }
+
+
+  private _getDefault(key: string) {
+    return key.replace(/%s|%d/gi, '');
+  }
+
+
+  private _getDefaultForPart(key: string, index: number) {
+    return `${this._getDefault(key)}[${index}]`;
   }
 
 }
