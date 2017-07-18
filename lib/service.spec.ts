@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { TranslateService } from '../';
+import { TranslateService } from './service';
 
 describe('service', () => {
 
@@ -57,6 +57,12 @@ describe('service', () => {
     it('should remove the interpolation places if they are not match for the expectations', () => {
       const service = createService({ key: '%s value %d' });
       expect(service.translate('key', ['string', 'expects for decimal'])).to.eql(' value ');
+    });
+
+
+    it('should always run in the service context', () => {
+      const service = createService({ key: 'value' });
+      expect(service.translate.call(null, 'key')).to.eql('value');
     });
 
   });

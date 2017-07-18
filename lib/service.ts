@@ -8,6 +8,7 @@ export class TranslateService {
 
   constructor(@Inject('translations') private _translations: any) {
     this._translations = flattenObject(_translations);
+    this.translate = this.translate.bind(this);
   }
 
 
