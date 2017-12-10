@@ -1,7 +1,7 @@
 import { Pipe } from '@angular/core';
 import { TranslateService } from './service';
 
-@Pipe({ name: 'translatePart' })
+@Pipe({ name: 'translateChunk' })
 export class TranslateChunkPipe {
 
   private _translateService: TranslateService;
