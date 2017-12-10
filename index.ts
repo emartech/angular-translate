@@ -3,6 +3,7 @@ export * from './lib/pipe';
 import { NgModule, ModuleWithProviders, Provider } from '@angular/core';
 import { TranslatePipe } from './lib/pipe';
 import { TranslatePartPipe } from './lib/translate-part.pipe';
+import { TranslateChunkPipe } from './lib/translate-chunk.pipe';
 import { TranslateService } from './lib/service';
 
 export type Translations = {
@@ -12,8 +13,8 @@ export type Translations = {
 export function translationsFactory() { return {}; }
 
 @NgModule({
-  declarations: [TranslatePipe, TranslatePartPipe],
-  exports: [TranslatePipe, TranslatePartPipe]
+  declarations: [TranslatePipe, TranslatePartPipe, TranslateChunkPipe],
+  exports: [TranslatePipe, TranslatePartPipe, TranslateChunkPipe]
 })
 export class TranslateModule {
   static forRoot(
