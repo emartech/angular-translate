@@ -124,6 +124,24 @@ describe('service', () => {
 
   });
 
+  describe('#translateChunk', () => {
+
+    it(`should translate the given object's value`, () => {
+      const service = createService({ key: 'value' });
+      expect(service.translateChunk({ something: 'key' })).to.eql({ something: 'value' });
+    });
+
+
+    it('should translate every given key', () => {
+      const service = createService({ key: 'value', key2: 'value2' });
+      expect(service.translateChunk({ something: 'key', other: 'key2' })).to.eql({
+        something: 'value',
+        other: 'value2'
+      });
+    });
+
+  });
+
 });
 
 

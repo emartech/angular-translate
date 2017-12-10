@@ -44,6 +44,13 @@ export class TranslateService {
   }
 
 
+  translateChunk(object: { [key: string]: string }) {
+    return Object.keys(object).reduce((translated, key) => {
+      return Object.assign({}, translated, { [key]: this.translate(object[key]) });
+    }, {});
+  }
+
+
   private _getParts(text: string) {
     return pipe(
       split('%s'),
