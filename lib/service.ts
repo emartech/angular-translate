@@ -44,10 +44,15 @@ export class TranslateService {
   }
 
 
-  translateChunk(object: { [key: string]: string }) {
+  translateChunk(object: { [key: string]: string | Object }): { [key: string]: string | Object } {
     return Object.keys(object).reduce((translated, key) => {
-      return Object.assign({}, translated, { [key]: this.translate(object[key]) });
+      return Object.assign({}, translated, { [key]: this._deepTranslate(object[key]) });
     }, {});
+  }
+
+
+  private _deepTranslate(value: string | Object): string | Object {
+    return typeof value === 'string' ? this.translate(value) : this.translateChunk(value as any);
   }
 
 

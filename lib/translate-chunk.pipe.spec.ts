@@ -15,6 +15,15 @@ describe('TranslateChunkPipe', () => {
       });
     });
 
+    it('should return the given part of the deep translation', () => {
+      const service = new TranslateService({ key: 'something',  key2: '[X]', key3: '[Y]' });
+      const pipe = new TranslateChunkPipe(service);
+      expect(pipe.transform({ a: 'key', b: { c: 'key2', d: 'key3' } })).to.eql({
+        a: 'something',
+        b: { c: '[X]', d: '[Y]' }
+      });
+    });
+
   });
 
 });

@@ -11,7 +11,7 @@ export class TranslateChunkPipe {
   }
 
 
-  transform(object: { [key: string]: string }): { [key: string]: string } {
+  transform(object: { [key: string]: string | Object }): { [key: string]: string | Object } {
     return this._translateService.translateChunk(object);
   }
 
