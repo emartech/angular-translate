@@ -20,7 +20,7 @@
     "url": "git+https://github.com/emartech/angular-translate.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/emartech/angular-translate/issues"
   },
