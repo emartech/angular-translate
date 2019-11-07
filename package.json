@@ -3,15 +3,14 @@
   "description": "Translate module for Angular",
   "keywords": [
     "angular",
-    "angular2",
     "translate",
     "i18n"
   ],
   "main": "dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "test": "mocha --require core-js/shim --require reflect-metadata --require ts-node/register lib/**/*.spec.ts",
-    "prepublish": "npm run build",
+    "test": "mocha --require reflect-metadata --require ts-node/register lib/**/*.spec.ts",
+    "prepare": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "build": "rimraf dist && ngc"
   },
@@ -30,35 +29,37 @@
     }
   },
   "homepage": "https://github.com/emartech/angular-translate#readme",
+  "engines": {
+    "node": "10.16.3"
+  },
   "dependencies": {
-    "flat": "^1.6.0",
-    "ramda": "^0.23.0",
-    "sprintf-js": "^1.0.3"
+    "@angular/cli": "8.3.17",
+    "flat": "5.0.0",
+    "ramda": "0.26.1",
+    "sprintf-js": "1.1.2"
   },
   "peerDependencies": {
-    "@angular/core": "^2.0.0 || ^4.0.0"
+    "@angular/core": "^8.0.0"
   },
   "devDependencies": {
-    "@angular/compiler": "2.4.1",
-    "@angular/compiler-cli": "2.4.1",
-    "@angular/core": "2.4.1",
-    "@types/chai": "^3.4.34",
-    "@types/core-js": "0.9.35",
+    "@angular/compiler": "8.2.13",
+    "@angular/compiler-cli": "8.2.13",
+    "@angular/core": "8.2.13",
+    "@types/chai": "4.2.4",
     "@types/flat": "0.0.28",
-    "@types/mocha": "2.2.35",
-    "@types/node": "6.0.57",
-    "@types/ramda": "0.0.7",
-    "@types/sprintf-js": "0.0.27",
-    "chai": "3.5.0",
-    "core-js": "2.4.1",
-    "mocha": "2.4.5",
-    "reflect-metadata": "0.1.8",
-    "rimraf": "2.5.2",
-    "rxjs": "5.0.1",
-    "semantic-release": "6.3.2",
-    "ts-node": "0.7.0",
-    "typescript": "2.0.10",
-    "typings": "2.0.0",
-    "zone.js": "0.7.2"
+    "@types/mocha": "5.2.7",
+    "@types/node": "12.12.6",
+    "@types/ramda": "0.26.33",
+    "@types/sprintf-js": "1.1.2",
+    "chai": "4.2.0",
+    "mocha": "6.2.2",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.0",
+    "rxjs": "6.5.3",
+    "semantic-release": "15.13.30",
+    "ts-node": "8.4.1",
+    "typescript": "3.5.3",
+    "typings": "2.1.1",
+    "zone.js": "0.9.1"
   }
 }

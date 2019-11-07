@@ -2,13 +2,13 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "ES5",
+    "target": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": false,
     "declaration": true,
     "outDir": "./dist",
-    "types": ["chai", "core-js", "node", "mocha", "ramda"]
+    "types": ["chai", "node", "mocha", "ramda"]
   },
   "exclude": [
     "node_modules",
