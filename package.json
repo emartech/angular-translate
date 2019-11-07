@@ -11,7 +11,7 @@
   "scripts": {
     "test": "mocha --require reflect-metadata --require ts-node/register lib/**/*.spec.ts",
     "prepare": "npm run build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release",
     "build": "rimraf dist && ngc"
   },
   "repository": {
