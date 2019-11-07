@@ -23,11 +23,6 @@
   "bugs": {
     "url": "https://github.com/emartech/angular-translate/issues"
   },
-  "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/src/lib/plugin-noop.js"
-    }
-  },
   "homepage": "https://github.com/emartech/angular-translate#readme",
   "engines": {
     "node": "10.16.3"
