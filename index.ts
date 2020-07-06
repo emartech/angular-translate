@@ -19,7 +19,7 @@ export function translationsFactory() { return {}; }
 export class TranslateModule {
   static forRoot(
     providedTranslations: Provider = { provide: 'translations', useFactory: translationsFactory }
-  ): ModuleWithProviders {
+  ): ModuleWithProviders<TranslateModule> {
     return {
       ngModule: TranslateModule,
       providers: [TranslateService, providedTranslations]
