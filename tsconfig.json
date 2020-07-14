@@ -2,13 +2,13 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "es2015",
+    "target": "es2019",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": false,
     "declaration": true,
     "outDir": "./dist",
-    "types": ["chai", "node", "mocha", "ramda"]
+    "types": ["chai", "node", "mocha"]
   },
   "exclude": [
     "node_modules",
