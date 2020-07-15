@@ -56,11 +56,7 @@ export class TranslateService {
 
 
   private _getParts(text: string) {
-    return text.split('%s')
-      .map(function splitDelimiter(partialText) {
-        return partialText.split('%d')
-      })
-      .flat(Infinity)
+    return text.split(/%s|%d/gi)
   }
 
 
