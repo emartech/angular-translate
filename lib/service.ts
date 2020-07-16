@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { flatten as flattenObject } from 'flat';
 import { vsprintf } from 'sprintf-js';
-import { flatten as flattenArray, split, pipe, map } from 'ramda';
 
 @Injectable()
 export class TranslateService {
@@ -57,11 +56,7 @@ export class TranslateService {
 
 
   private _getParts(text: string) {
-    return pipe(
-      split('%s'),
-      map(split('%d')),
-      flattenArray
-    )(text);
+    return text.split(/%s|%d/gi)
   }
 
 
