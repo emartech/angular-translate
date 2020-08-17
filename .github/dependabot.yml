@@ -14,5 +14,5 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
-    assignees:
+    reviewers:
       - "@emartech/me-content"
