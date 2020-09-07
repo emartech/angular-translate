@@ -4,7 +4,12 @@ import { TranslateService } from './service';
 @Pipe({ name: 'translatePart' })
 export class TranslatePartPipe {
 
-  constructor(private _translateService: TranslateService) {}
+  private _translateService: TranslateService;
+
+  constructor(translateService: TranslateService) {
+    this._translateService = translateService;
+  }
+
 
   transform(key: string, part: number): string {
     return this._translateService.translatePart(key, part);
