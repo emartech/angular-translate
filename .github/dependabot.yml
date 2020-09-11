@@ -9,10 +9,11 @@ updates:
     directory: "/" # Location of package manifests
     commit-message:
       # Prefix all commit messages with "npm"
-      prefix: "npm"
+      prefix: "fix"
       include: "scope"
     schedule:
       interval: "weekly"
       day: "sunday"
     reviewers:
       - "@emartech/me-content"
+    versioning-strategy: "increase-if-necessary"
