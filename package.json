@@ -39,7 +39,7 @@
     "@angular/core": ">=8.0.0"
   },
   "devDependencies": {
-    "@angular/cli": "8.3.29",
+    "@angular/cli": "11.2.4",
     "@angular/compiler-cli": "8.2.14",
     "@types/chai": "4.2.15",
     "@types/flat": "5.0.1",
