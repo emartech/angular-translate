@@ -17,5 +17,8 @@
   "filesGlob": [
     "index.ts",
     "./lib/*.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    // "enableIvy": false
+  }
 }
