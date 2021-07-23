@@ -1,5 +1,9 @@
 # angular-translate
 
+⚠️  depreciated  ⚠️
+
+new codebase https://github.com/emartech/angular-modules
+
 Install
 ---------
 
