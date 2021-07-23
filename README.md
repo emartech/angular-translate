@@ -2,7 +2,8 @@
 
 ⚠️  depreciated  ⚠️
 
-new codebase https://github.com/emartech/angular-modules
+new codebase https://github.com/emartech/angular-moduleshttps://github.com/emartech/angular-modules/tree/main/projects/angular-translate
+
 
 Install
 ---------
